@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Not Great Enterprises | We're Fine. And That's Fine.</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --beige: #f5f0e8;
+      --tan: #e8dfc8;
+      --khaki: #c8ba9a;
+      --olive: #7a7a5c;
+      --dark: #3a3a2e;
+      --muted: #6b6b55;
+      --border: #d4c9b0;
+      --white: #fdfaf4;
+      --accent: #8a9a6a;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: var(--beige);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      color: var(--dark);
+      text-transform: uppercase;
+    }
+    .nav-logo span {
+      color: var(--olive);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--dark); }
+
+    .ticker-bar {
+      background: var(--dark);
+      color: var(--khaki);
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      padding: 6px 2rem;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      overflow: hidden;
+    }
+    .ticker-item { white-space: nowrap; }
+    .ticker-flat { color: #aaa; }
+    .ticker-barely-up { color: #b8c9a0; }
+    .ticker-barely-down { color: #c4a08a; }
+
+    /* HERO */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 strong {
+      font-weight: 700;
+    }
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+    }
+    .hero-stat-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+    .hero-stat-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .btn-primary {
+      background: var(--olive);
+      color: var(--white);
+      padding: 0.75rem 2rem;
+      border: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--border);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .section-full {
+      max-width: 100%;
+      padding: 5rem 2rem;
+    }
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+    p {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-values {
+      margin-top: 2rem;
+    }
+    .about-value {
+      border-left: 3px solid var(--border);
+      padding-left: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .about-value h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .about-value p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    .about-sidebar {
+      background: var(--tan);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+    .about-sidebar h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1.25rem;
+    }
+    .milestone {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: baseline;
+    }
+    .milestone-year {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 44px;
+    }
+    .milestone-text {
+      font-size: 0.9rem;
+      color: var(--dark);
+      max-width: 100%;
+    }
+
+    /* GUAC */
+    .guac-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .guac-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .guac-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+    .guac-logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .guac-logo {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+    .guac-name {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .guac-subname {
+      font-size: 1rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .guac-desc p { max-width: 100%; }
+
+    /* PRICING TABLE */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 3rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+    .pricing-table th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--dark);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pricing-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--dark);
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .guac-price {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .guac-price-strike {
+      text-decoration: line-through;
+      color: var(--khaki);
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    /* GUAC CALC */
+    .guac-calc-block {
+      background: var(--tan);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 3rem;
+      max-width: 480px;
+    }
+    .guac-calc-block h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1.25rem;
+    }
+    .calc-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .calc-row label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      min-width: 200px;
+    }
+    .calc-row input {
+      width: 80px;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--dark);
+      text-align: center;
+    }
+    .calc-result {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    .calc-result strong {
+      font-family: 'Courier New', monospace;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+    .calc-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial {
+      background: var(--tan);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+    .testimonial blockquote {
+      font-size: 0.95rem;
+      color: var(--dark);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .testimonial cite {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .stars {
+      color: var(--khaki);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* VENTURES */
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .venture-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+    .venture-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .venture-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    .venture-tagline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1rem;
+    }
+    .venture-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      max-width: 100%;
+    }
+    .venture-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .rating-stars { color: var(--khaki); font-size: 0.85rem; }
+    .rating-num {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .venture-badge {
+      display: inline-block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--tan);
+      color: var(--muted);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      margin-left: auto;
+    }
+
+    /* LEADERSHIP */
+    .leadership-section {
+      background: var(--tan);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .leader {
+      text-align: center;
+    }
+    .leader-avatar {
+      width: 80px;
+      height: 80px;
+      background: var(--khaki);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .leader-name {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .leader-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+    .leader-bio {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    /* INVESTORS */
+    .investor-bar {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .investor-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .investor-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .investor-logo {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--khaki);
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: var(--khaki);
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      color: var(--khaki);
+      font-size: 0.85rem;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      font-size: 0.85rem;
+      color: var(--khaki);
+      margin-bottom: 0.5rem;
+    }
+    .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      color: #777;
+    }
+    .footer-ticker {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #777;
+    }
+    .footer-ticker .flat { color: #888; }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      background: var(--tan);
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .disclaimer p {
+      font-size: 0.72rem;
+      color: var(--muted);
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .guac-header { grid-template-columns: 1fr; gap: 2rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .leaders-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .nav-links { display: none; }
+      .hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <span class="ticker-item">GNG <span class="ticker-flat">$14.20 +0.00 (0.00%)</span></span>
+  <span class="ticker-item">GUAC <span class="ticker-barely-up">$0.00 +0.00 (FREE)</span></span>
+  <span class="ticker-item">PKNG <span class="ticker-flat">$7.50 -0.01 (-0.13%)</span></span>
+  <span class="ticker-item">COFEE <span class="ticker-barely-down">$3.10 -0.02 (-0.64%)</span></span>
+  <span class="ticker-item">INN <span class="ticker-flat">$22.00 +0.00 (flat)</span></span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Good <span>Not Great</span> Enterprises</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#guac">Guacs On Us</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#investors">Investors</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Est. 2007. Still going.</p>
+  <h1><strong>Good Not Great</strong><br>Enterprises</h1>
+  <p class="hero-tagline">Adequate ideas, reliably delivered, since 2007.</p>
+  <div class="cta-row">
+    <a href="#guac" class="btn-primary">See Our Flagship</a>
+    <a href="#about" class="btn-secondary">Learn More, I Guess</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num">12</div>
+      <div class="hero-stat-label">Years of Adequate Service</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">0</div>
+      <div class="hero-stat-label">Disruptions to Date</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">3.2</div>
+      <div class="hero-stat-label">Avg. Star Rating (All Ventures)</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">Fine</div>
+      <div class="hero-stat-label">Overall Status</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <p class="section-label">Who We Are</p>
+      <h2>We've never disrupted anything. That's the plan.</h2>
+      <p>Good Not Great Enterprises was founded in 2007 on a single conviction: that good enough is, in fact, good enough. We've spent almost two decades building companies that deliver on exactly what they promise, no more, no less.</p>
+      <p>Our competitors chase greatness. They raise Series C rounds. They keynote conferences. They get breathless coverage in publications that use the word "visionary" without irony. We watch all of that happen and think: neat.</p>
+      <p>We've never gone viral. We've never been described as revolutionary. A reporter once called us "quietly adequate" and we put it on a mug.</p>
+      <div class="about-values">
+        <div class="about-value">
+          <h3>Managed Expectations</h3>
+          <p>Every product we ship meets the bar it was supposed to meet. Not a higher bar. The actual bar.</p>
+        </div>
+        <div class="about-value">
+          <h3>No Pivots</h3>
+          <p>We've been in the same businesses since we started them. We don't pivot. We persist, at a medium pace.</p>
+        </div>
+        <div class="about-value">
+          <h3>Sustainable Mediocrity</h3>
+          <p>Greatness burns people out. Good keeps going. We've had the same core team since 2009. Gary left in 2014 but he sends cards.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="about-sidebar">
+        <h3>Company Timeline</h3>
+        <div class="milestone">
+          <span class="milestone-year">2007</span>
+          <span class="milestone-text">Founded. Named "Good Not Great" at the suggestion of our first investor, who said it was "honest, at least."</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2008</span>
+          <span class="milestone-text">Survived the financial crisis. Stock went flat. Stayed flat. We considered this a win.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2011</span>
+          <span class="milestone-text">Launched Guacs On Us. Lost money immediately. Continued on purpose.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2014</span>
+          <span class="milestone-text">Gary left to "pursue something great." He sells insurance now. We wish him well.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2016</span>
+          <span class="milestone-text">Opened The Adequate Inn. Received 3.2 stars on opening weekend. Target achieved.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2019</span>
+          <span class="milestone-text">Featured in a listicle titled "Companies You've Never Heard Of." We were number 7.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">2023</span>
+          <span class="milestone-text">Declined acquisition offer. Acquiring company described us as "intriguing, but not quite right." We agreed.</span>
+        </div>
+        <div class="milestone">
+          <span class="milestone-year">Today</span>
+          <span class="milestone-text">Still here. Still fine. Thank you for your interest.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUAC -->
+<div class="guac-section" id="guac">
+  <div class="guac-inner">
+    <div class="guac-header">
+      <div class="guac-logo-block">
+        <span class="guac-logo">🥑</span>
+        <div class="guac-name">Guacs On Us</div>
+        <div class="guac-subname">A Good Not Great Flagship Venture</div>
+        <p class="section-label" style="margin-top: 0.5rem;">Free guac. Forever. Yes, really.</p>
+      </div>
+      <div class="guac-desc">
+        <p>At Guacs On Us, the guac is always free. Not "free with purchase over $15." Not "free on Tuesdays." Not a limited-time offer to drive trial. Just free. Every time. For every item. No asterisk.</p>
+        <p>We lose money on every transaction. We have always lost money on every transaction. This is not a mistake. This is the business model. Our CFO has made peace with it. She meditates now.</p>
+        <p>Our investors asked us, once, how we planned to monetize the free guac. We said we didn't. Two of them left. The third one said "okay" and has not brought it up since. We appreciate Dave.</p>
+      </div>
+    </div>
+
+    <p class="section-label">Menu and Pricing</p>
+    <h2>Everything. With Guac. At No Additional Cost.</h2>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Base Price</th>
+          <th>Guac Upcharge</th>
+          <th>Guac Price</th>
+          <th>Total with Guac</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Burrito (any protein)</td>
+          <td>$11.50</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>$11.50</td>
+        </tr>
+        <tr>
+          <td>Burrito Bowl</td>
+          <td>$10.75</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>$10.75</td>
+        </tr>
+        <tr>
+          <td>Tacos (3)</td>
+          <td>$9.50</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>$9.50</td>
+        </tr>
+        <tr>
+          <td>Quesadilla</td>
+          <td>$8.25</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>$8.25</td>
+        </tr>
+        <tr>
+          <td>Side of Guac (no other item)</td>
+          <td>$0.00</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>$0.00</td>
+        </tr>
+        <tr>
+          <td>A second helping of guac</td>
+          <td>N/A</td>
+          <td><span class="guac-price-strike">$2.00</span></td>
+          <td><span class="guac-price">$0.00</span></td>
+          <td>Free, obviously</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="guac-calc-block">
+      <h3>Guac Savings Calculator</h3>
+      <div class="calc-row">
+        <label>Times you've ordered guac</label>
+        <input type="number" id="guac-count" value="1" min="0" oninput="calcGuac()" />
+      </div>
+      <div class="calc-result">
+        You have saved: <strong id="guac-result">$0.00</strong>
+        <div class="calc-note" id="guac-note">Guac has always been free here. You have never paid for guac here. That is the whole thing.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 4rem;">
+      <p class="section-label">What People Are Saying</p>
+      <h2>Testimonials from Real Customers Who Could Not Believe the Guac Was Free</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I asked if the guac was extra and the person at the counter looked almost sad. Like they'd heard it a thousand times and it still hurt a little. The guac was not extra. It was free. It has always been free."</blockquote>
+          <cite>Kevin M., Regular</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I drove past three other burrito places to get here specifically because the guac is free. I don't even like guacamole that much. It's the principle."</blockquote>
+          <cite>Sandra L., Principle-Based Consumer</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <blockquote>"Four stars because the salsa is merely okay. Five stars on the guac situation. The guac was free. I asked twice. I asked a third time just to watch them nod."</blockquote>
+          <cite>Thomas R., Verified Skeptic</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"My financial advisor told me to look for places I'm leaving value on the table. He meant investments. I found this burrito place. I eat here four times a week. The guac is free."</blockquote>
+          <cite>Deborah H., Portfolio Manager</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I told my husband the guac was free and he said 'guac is always extra' and I said 'not here' and now we come every Friday. He has never apologized. But he always orders the guac."</blockquote>
+          <cite>Patricia C., Vindicated</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"The food is fine. Good, not great. But the guac is free and I simply cannot overstate what that does to the experience. Every time. Free. I have been coming here for nine years."</blockquote>
+          <cite>Marcus T., Nine-Year Regular</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <p class="section-label">Portfolio</p>
+  <h2>Our Other Good, Not Great Ventures</h2>
+  <p>Each of these businesses was built to be exactly what it says it is. Nothing more. Nothing less. We're proud of that, in a measured way.</p>
+
+  <div class="ventures-grid">
+    <div class="venture-card">
+      <span class="venture-emoji">🅿️</span>
+      <div class="venture-name">Decent Parking</div>
+      <div class="venture-tagline">A Good Not Great Mobility Company</div>
+      <p class="venture-desc">Our lots are not close. They are not far. They are a four to six minute walk, which is a reasonable amount of walking. The spots are adequately sized. The lighting works. We painted the lines recently. You will find a spot. It will take a normal amount of time. No valet. No app required. Cash accepted. The attendant knows where he is.</p>
+      <div class="venture-rating">
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+        <span class="rating-num">3.1 stars, 847 reviews</span>
+        <span class="venture-badge">Adequate</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <span class="venture-emoji">&#9749;</span>
+      <div class="venture-name">Pretty OK Coffee</div>
+      <div class="venture-tagline">A Good Not Great Beverage Company</div>
+      <p class="venture-desc">The coffee is warm. It is coffee. It was made this morning, or possibly this afternoon, depending on when you come. We source our beans from a country that grows coffee. The roast is medium. Not dark. Not light. The cup is a standard cup. We have oat milk. It is the store brand. You will drink it and think, "this is fine." That is what we're going for.</p>
+      <div class="venture-rating">
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+        <span class="rating-num">3.3 stars, 1,204 reviews</span>
+        <span class="venture-badge">Reliably Drinkable</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <span class="venture-emoji">&#127968;</span>
+      <div class="venture-name">The Adequate Inn</div>
+      <div class="venture-tagline">A Good Not Great Hospitality Company</div>
+      <p class="venture-desc">The beds are beds. The showers have hot water, most of the time, and our HVAC was repaired in 2022 and has not failed since. The continental breakfast features exactly what you expect. The wifi password is written on a card and the card is on the desk. We have a pool. The pool is open. We will not pretend the pool is special. It is a pool. Checkout is at 11. We mean 11.</p>
+      <div class="venture-rating">
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+        <span class="rating-num">3.2 stars, 3,781 reviews</span>
+        <span class="venture-badge">Intentionally 3.2 Stars</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <span class="venture-emoji">&#9986;</span>
+      <div class="venture-name">Good Enough Gifts</div>
+      <div class="venture-tagline">A Good Not Great Retail Company</div>
+      <p class="venture-desc">A gift shop for people who need a gift and don't have a lot of opinions about it. Candles that smell like candles. Books that are fine. Mugs. A section we call "miscellaneous" that contains items we couldn't categorize. Everything is wrapped, for an additional $2. The wrapping is not beautiful. It is wrapped. The bow is a stick-on bow. The recipient will know. They will still appreciate the gesture, which is the point.</p>
+      <div class="venture-rating">
+        <span class="rating-stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+        <span class="rating-num">3.0 stars, 619 reviews</span>
+        <span class="venture-badge">Gets the Job Done</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<div class="leadership-section" id="leadership">
+  <section>
+    <p class="section-label">Our Team</p>
+    <h2>The people responsible for all of this</h2>
+    <p>Our leadership team has a combined 94 years of experience producing work that is, on balance, pretty solid. They have all been here a while. None of them have LinkedIn bios that use the word "visionary."</p>
+    <div class="leaders-grid">
+      <div class="leader">
+        <div class="leader-avatar">&#128512;</div>
+        <div class="leader-name">Ronald P. Hatch</div>
+        <div class="leader-title">Founder and CEO</div>
+        <p class="leader-bio">Ron founded Good Not Great after leaving a startup that was trying to "change how humans experience the concept of waiting." He wanted to do something simpler. He has.</p>
+      </div>
+      <div class="leader">
+        <div class="leader-avatar">&#128530;</div>
+        <div class="leader-name">Diane Flowers</div>
+        <div class="leader-title">CFO</div>
+        <p class="leader-bio">Diane has been aware that Guacs On Us loses money since the first week. She meditates. She has accepted it. She would describe her overall financial outlook as "stable, given the circumstances."</p>
+      </div>
+      <div class="leader">
+        <div class="leader-avatar">&#128528;</div>
+        <div class="leader-name">Steve Muñoz</div>
+        <div class="leader-title">Chief Operating Officer</div>
+        <p class="leader-bio">Steve's job is to make sure everything runs acceptably. It does. He comes in at 8:30, leaves at 5:15, and sends emails that are clear and to the point. He is good at his job.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- INVESTOR BAR -->
+<div class="investor-bar" id="investors">
+  <div class="investor-label">Backed by investors who asked some questions and then decided it was fine</div>
+  <div class="investor-logos">
+    <div class="investor-logo">Plateau Capital</div>
+    <div class="investor-logo">Middling Ventures</div>
+    <div class="investor-logo">Adequate Growth Fund III</div>
+    <div class="investor-logo">Dave</div>
+    <div class="investor-logo">Flat Iron Partners</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Good Not Great Enterprises</h3>
+        <p>A holding company for businesses that deliver exactly what they say they will. No more. Rarely less.</p>
+        <br>
+        <p style="font-size: 0.78rem; color: #666;">Headquarters: A building, in a city. Third floor. The elevator is usually working.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ventures</h4>
+        <ul>
+          <li>Guacs On Us</li>
+          <li>Decent Parking</li>
+          <li>Pretty OK Coffee</li>
+          <li>The Adequate Inn</li>
+          <li>Good Enough Gifts</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About</li>
+          <li>Leadership</li>
+          <li>Investors</li>
+          <li>Press</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Press Mentions</h4>
+        <ul>
+          <li style="color: #666; font-size: 0.8rem;">"Quietly adequate." - unnamed reporter, 2019</li>
+          <li style="color: #666; font-size: 0.8rem;">"Fine, actually." - a blog, 2021</li>
+          <li style="color: #666; font-size: 0.8rem;">"The guac thing is real." - Reddit, 2022</li>
+          <li style="color: #666; font-size: 0.8rem;">"#7 in Companies You've Never Heard Of" - a listicle</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Good Not Great Enterprises, Inc. All rights reserved, to the extent they were ever pursued. A Good Not Great Company.
+      </div>
+      <div class="footer-ticker">
+        GNG: <span class="flat">$14.20 (unchanged since Tuesday)</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LEGAL DISCLAIMER -->
+<div class="disclaimer">
+  <p>
+    Good Not Great Enterprises makes no representations that any of its products are great. They are good. Forward-looking statements about goodness are subject to the risk that things remain exactly the same. Guac is free and will continue to be free. This is not a gimmick. We've tried to make it a gimmick and it didn't feel right. The Adequate Inn maintains a 3.2-star rating by design; reviews above 4 stars are appreciated but not our target demographic. Past adequacy is not necessarily indicative of future adequacy, though in our case it probably is. Dave is a real investor. We don't know his last name.
+  </p>
+</div>
+
+<script>
+  function calcGuac() {
+    const count = parseInt(document.getElementById('guac-count').value) || 0;
+    const result = document.getElementById('guac-result');
+    const note = document.getElementById('guac-note');
+    result.textContent = '$0.00';
+
+    const notes = [
+      'Guac has always been free here. You have never paid for guac here. That is the whole thing.',
+      'Yes, even for ' + count + ' orders. Still $0.00. The model is the model.',
+      'The calculator works correctly. You have saved $0.00 because you were never going to be charged.',
+      'We've run this ' + count + ' times now. It's always zero. The calculator is not broken.',
+      'At this point we'd just like to say: welcome to Guacs On Us. Thank you for using the calculator.'
+    ];
+
+    if (count === 0) {
+      note.textContent = 'Guac has always been free here. You have never paid for guac here. That is the whole thing.';
+    } else if (count <= 5) {
+      note.textContent = notes[1];
+    } else if (count <= 10) {
+      note.textContent = notes[2];
+    } else if (count <= 50) {
+      note.textContent = notes[3];
+    } else {
+      note.textContent = notes[4];
+    }
+  }
+</script>
+
+</body>
+</html>
